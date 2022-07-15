@@ -1,0 +1,11 @@
+{% extends 'starSocial/base.html' %}
+
+{% block body_block %}
+<div class="jumbotron">
+    <h2>{{ post.title }}</h2>
+    <p> By: {{ post.user }} on {{ post.createTime }}</p>
+</div>
+<p>
+    {{ post.content }}
+</p>
+{% endblock %}

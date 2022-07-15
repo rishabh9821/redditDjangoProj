@@ -1,0 +1,17 @@
+{% extends 'starSocial/base.html' %}
+
+{% block body_block %}
+    <div class="jumbotron jumbotron-fluid">
+        <h2>List of Groups</h2>
+    </div>
+    <div class="container">
+        <ul class="list-group">
+            {% for group in groups %}
+                <li class="list-group-item">
+                    <a href="{% url 'groups:group-detail' group_pk=group.pk %}">{{ group.name }}</a>
+                    <span class="badge badge-primary badge-pill">{{ group.members.count }} Members</span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

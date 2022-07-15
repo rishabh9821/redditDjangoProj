@@ -1,0 +1,14 @@
+{% extends 'starSocial/base.html' %}
+
+{% block body_block %}
+<div class="jumbotron-fluid">
+    <h2>Create Post</h2>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <input type="submit" class="btn btn-primary" value="Create Post">
+</form>
+{% endblock %}

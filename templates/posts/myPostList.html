@@ -1,0 +1,21 @@
+{% extends 'starSocial/base.html' %}
+
+{% block body_block %}
+<div class="jumbotron-fluid">
+    <h2>
+        {{ user.username }} Posts
+    </h2>
+</div>
+
+Copy
+<ul class="list-group">
+    {% for post in posts %}
+        <li class="list-group-item">
+            <a href="{% url 'posts:post-detail' post_pk=post.pk %}">
+                {{ post.title }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'starSocial/base.html' %}
+
+{% block body_block %}
+     <div class="container">
+        <h2>Create your group</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" class="btn btn-primary" value="Create Group">
+        </form>
+     </div>
+{% endblock %}
